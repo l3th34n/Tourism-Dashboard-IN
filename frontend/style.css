@@ -1,0 +1,334 @@
+/* INDIA TOURISM DASHBOARD — COMPLETE STYLE.CSS */
+:root {
+  --navy: #102a43;
+  --navy-dark: #071d32;
+  --saffron: #ef9518;
+  --green: #117b59;
+  --green-dark: #086344;
+  --page: #f5f8fc;
+  --white: #fff;
+  --text: #243447;
+  --muted: #61758a;
+  --border: #e1e9f1;
+  --shadow: 0 8px 28px rgba(16, 42, 67, .08);
+  --radius: 16px;
+}
+
+/* 1. BASE */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 165px; }
+body { margin: 0; font: 16px/1.7 "Segoe UI", Arial, sans-serif; color: var(--text); background: var(--page); }
+a { color: inherit; text-decoration: none; }
+button, input, textarea { font: inherit; }
+button { cursor: pointer; }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid var(--saffron); outline-offset: 3px; }
+
+/* 2. GOVERNMENT TOP BAR */
+.gov-bar {
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+  padding: 8px max(5%, calc((100% - 1200px)/2));
+  color: white; background: var(--navy-dark); font-size: 12px;
+}
+.gov-bar a { padding: 3px 5px; }
+.gov-bar a:hover { color: #ffd58b; text-decoration: underline; }
+
+/* 3. HEADER + NAVIGATION */
+header { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,.98); box-shadow: 0 3px 16px rgba(16,42,67,.08); }
+header::before { content: ""; display: block; height: 4px; background: linear-gradient(to right, #ff9933 0 33.33%, white 33.33% 66.66%, #12805e 66.66% 100%); }
+.logo-section { display: flex; align-items: center; gap: 16px; width: min(1200px,90%); margin: auto; padding: 16px 0; }
+.logo { display: grid; place-items: center; flex: 0 0 60px; height: 60px; background: #fff5e7; border: 1px solid #ffe0a8; border-radius: 14px; font-size: 34px; }
+.logo-section h1 { margin: 0; color: var(--navy); font-size: clamp(20px,2.5vw,28px); line-height: 1.3; }
+.logo-section p { margin: 4px 0 0; color: var(--muted); font-size: 12px; }
+nav { display: flex; align-items: center; flex-wrap: wrap; gap: 5px; width: min(1200px,90%); margin: auto; padding-bottom: 12px; }
+nav a { padding: 8px 12px; color: var(--navy); border-radius: 8px; font-size: 14px; font-weight: 650; transition: background .2s, color .2s; }
+nav a:hover { background: #e9f5ef; color: var(--green-dark); }
+nav a[href="login.html"] { margin-left: auto; border: 1px solid var(--green); color: var(--green-dark); }
+nav a[href="signup.html"] { padding-inline: 19px; background: var(--green); color: white; }
+nav a[href="signup.html"]:hover { background: var(--green-dark); }
+
+/* 4. SECTION HEADINGS */
+main > section { width: min(1200px,90%); margin: auto; padding: 65px 0; }
+main > section:not(.hero) > h2 { margin: 0 0 15px; color: var(--navy); font-size: clamp(26px,3vw,36px); line-height: 1.3; }
+main > section:not(.hero) > h2::after { content: ""; display: block; width: 56px; height: 4px; margin-top: 14px; border-radius: 4px; background: linear-gradient(to right, var(--saffron),var(--green)); }
+main > section > p { max-width: 770px; margin: 0 0 26px; color: var(--muted); }
+
+/* 5. HERO */
+main > .hero {
+  position: relative; isolation: isolate; overflow: hidden; width: 100%; max-width: none; min-height: 520px;
+  padding: 95px max(5%,calc((100% - 1200px)/2));
+  background: radial-gradient(circle at 80% 20%,rgba(255,184,82,.24),transparent 30%),
+              radial-gradient(circle at 75% 90%,rgba(91,215,162,.23),transparent 34%),
+              linear-gradient(115deg,#082c46 0%,#10546a 58%,#087453 100%);
+  color: white;
+}
+.hero::after { content: ""; position: absolute; z-index: -1; top: -130px; right: -100px; width: 420px; height: 420px; border: 65px solid rgba(255,255,255,.06); border-radius: 50%; }
+.hero h2 { max-width: 780px; margin: 0 0 22px; font-size: clamp(36px,5.2vw,65px); line-height: 1.15; letter-spacing: -1px; }
+main > .hero p { max-width: 620px; margin-bottom: 32px; color: #e5f2f4; font-size: clamp(16px,1.7vw,19px); }
+.hero a { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; margin: 0 10px 10px 0; padding: 10px 24px; border-radius: 9px; font-weight: 700; font-size: 14px; transition: transform .2s,background .2s; }
+.hero a:hover { transform: translateY(-3px); }
+.hero a:first-of-type { color: #182b3a; background: #ffb439; }
+.hero a:first-of-type:hover { background: #ffd079; }
+.hero a:last-of-type { color: white; border: 1px solid rgba(255,255,255,.8); background: rgba(255,255,255,.08); }
+.hero a:last-of-type:hover { background: rgba(255,255,255,.2); }
+
+/* 6. STATISTIC CARDS */
+.stats-container { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 20px; margin-top: 32px; }
+.stat-card { min-width: 0; min-height: 180px; padding: 26px 22px; border: 1px solid var(--border); border-top: 4px solid var(--saffron); border-radius: var(--radius); background: white; box-shadow: var(--shadow); transition: transform .25s,box-shadow .25s; }
+.stat-card:nth-child(2) { border-top-color: var(--green); }
+.stat-card:nth-child(3) { border-top-color: #3982b8; }
+.stat-card:nth-child(4) { border-top-color: #e17f45; }
+.stat-card:hover { transform: translateY(-5px); box-shadow: 0 15px 32px rgba(16,42,67,.14); }
+.stat-card h3 { margin: 0 0 19px; color: var(--muted); font-size: 15px; font-weight: 650; }
+.stat-card p { margin: 0; color: var(--navy); font-size: clamp(18px,2vw,26px); font-weight: 800; overflow-wrap: anywhere; }
+
+/* 7. CHART CARDS AND PLACEHOLDERS */
+.chart-container { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px; margin: 32px 0; }
+.chart-container article { min-width: 0; padding: 28px; border: 1px solid var(--border); border-radius: var(--radius); background: white; box-shadow: var(--shadow); }
+.chart-container article:nth-child(3) { grid-column: 1 / -1; }
+.chart-container h3 { margin: 0 0 20px; color: var(--navy); font-size: 19px; }
+#tourist-arrival-chart, #domestic-foreign-chart, #state-tourism-chart { display: grid; place-items: center; min-width: 0; min-height: 280px; padding: 20px; border: 1px dashed #bfd1dd; border-radius: 12px; background: repeating-linear-gradient(0deg,#f7fafc 0 39px,#e9f0f6 40px); color: var(--muted); text-align: center; }
+#statistics > p:last-child a { color: var(--green-dark); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+#statistics > p:last-child a:hover { color: var(--navy); }
+
+/* 8. DATA EXPLORER */
+#data-explorer { padding: 45px; border: 1px solid #d9e9e2; border-radius: 22px; background: linear-gradient(135deg,#eaf8f0,#f7fbff); }
+#data-explorer > div { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+#data-explorer button { padding: 12px 19px; border: 1px solid #b7d5c6; border-radius: 30px; background: white; color: var(--green-dark); font-weight: 700; transition: transform .2s,background .2s,color .2s; }
+#data-explorer button:hover { transform: translateY(-2px); color: white; background: var(--green); }
+
+/* 9. DESTINATIONS */
+.destination-container { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 20px; margin-top: 30px; }
+.destination-container article { display: flex; flex-direction: column; min-height: 255px; min-width: 0; padding: 27px 23px; border: 1px solid var(--border); border-radius: var(--radius); background: white; box-shadow: var(--shadow); transition: transform .25s,box-shadow .25s; }
+.destination-container article:hover { transform: translateY(-5px); box-shadow: 0 15px 32px rgba(16,42,67,.13); }
+.destination-container article:nth-child(1) { border-top: 5px solid #e59b35; }
+.destination-container article:nth-child(2) { border-top: 5px solid #16875c; }
+.destination-container article:nth-child(3) { border-top: 5px solid #6084ba; }
+.destination-container article:nth-child(4) { border-top: 5px solid #d97858; }
+.destination-container h3 { margin: 0 0 12px; color: var(--navy); font-size: 19px; }
+.destination-container p { margin: 0 0 22px; color: var(--muted); font-size: 14px; }
+.destination-container a { margin-top: auto; color: var(--green-dark); font-weight: 750; }
+.destination-container a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* 10. ABOUT + USEFUL LINKS */
+#about { padding: 45px; border-radius: 20px; background: white; border: 1px solid var(--border); box-shadow: var(--shadow); }
+#about p { max-width: 950px; margin: 0 0 16px; color: var(--text); }
+#about p:last-child { margin-bottom: 0; }
+#about + section ul { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; padding: 0; margin: 25px 0 0; list-style: none; }
+#about + section li a { display: block; padding: 18px 22px; border: 1px solid var(--border); border-radius: 12px; background: white; color: var(--green-dark); font-weight: 650; box-shadow: var(--shadow); }
+#about + section li a:hover { border-color: var(--green); background: #f0faf4; }
+
+/* 11. CONTACT FORM */
+#contact form { display: grid; gap: 10px; max-width: 720px; padding: 34px; border: 1px solid var(--border); border-radius: var(--radius); background: white; box-shadow: var(--shadow); }
+#contact label { color: var(--navy); font-size: 14px; font-weight: 700; }
+#contact input, #contact textarea { width: 100%; padding: 13px 15px; margin-bottom: 12px; border: 1px solid #c9d6e2; border-radius: 9px; background: #fbfdff; color: var(--text); transition: border-color .2s,box-shadow .2s; }
+#contact input:focus, #contact textarea:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 3px rgba(17,123,89,.12); }
+#contact textarea { min-height: 150px; resize: vertical; }
+#contact button { justify-self: start; min-width: 155px; padding: 12px 24px; border: 0; border-radius: 9px; background: var(--green); color: white; font-weight: 700; transition: background .2s,transform .2s; }
+#contact button:hover { transform: translateY(-2px); background: var(--green-dark); }
+
+/* 12. FOOTER */
+footer { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 35px; padding: 55px max(5%,calc((100% - 1200px)/2)) 25px; background: var(--navy-dark); color: #d5e3ed; }
+footer h3 { margin: 0 0 16px; color: white; font-size: 18px; }
+footer p { margin: 0 0 9px; font-size: 14px; }
+footer ul { margin: 0; padding: 0; list-style: none; }
+footer li { margin-bottom: 10px; }
+footer a { font-size: 14px; }
+footer a:hover { color: #ffcb69; text-decoration: underline; }
+footer hr { grid-column: 1 / -1; width: 100%; margin: 8px 0 0; border: 0; border-top: 1px solid #385065; }
+footer > p { grid-column: 1 / -1; margin: 0; color: #c6d4df; text-align: center; font-size: 13px; }
+
+/* 13. RESPONSIVE: TABLET */
+@media (max-width: 1000px) {
+  .stats-container, .destination-container { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  nav a[href="login.html"] { margin-left: 0; }
+  main > .hero { min-height: 450px; }
+}
+
+/* 14. RESPONSIVE: MOBILE */
+@media (max-width: 650px) {
+  html { scroll-padding-top: 115px; }
+  .gov-bar { justify-content: center; text-align: center; }
+  .logo-section { gap: 11px; padding-block: 12px; }
+  .logo { flex-basis: 48px; height: 48px; font-size: 26px; }
+  .logo-section h1 { font-size: 19px; }
+  .logo-section p { font-size: 11px; }
+  nav { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 12px; scrollbar-width: thin; }
+  nav a { flex: 0 0 auto; font-size: 13px; padding: 8px 10px; }
+  main > section { padding-block: 48px; }
+  main > .hero { min-height: 430px; padding: 64px 5%; }
+  .hero h2 { font-size: clamp(32px,8vw,44px); }
+  .hero::after { right: -250px; }
+  .stats-container, .chart-container, .destination-container, #about + section ul { grid-template-columns: 1fr; }
+  .chart-container article:nth-child(3) { grid-column: auto; }
+  .chart-container article { padding: 19px; }
+  #data-explorer, #about { padding: 25px 20px; }
+  #data-explorer button { width: 100%; text-align: center; }
+  #contact form { padding: 23px 18px; }
+  footer { grid-template-columns: 1fr; gap: 25px; }
+}
+
+/* 15. ACCESSIBILITY */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
+
+/* ==================================================
+   16. CINEMATIC SCROLL PHOTO SECTION
+   Insert photo-section.html between Hero and Dashboard.
+================================================== */
+
+main > .photo-story {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: none;
+  min-height: 620px;
+  height: min(88svh, 820px);
+  padding: 80px max(5%, calc((100% - 1200px) / 2));
+  overflow: hidden;
+  background: linear-gradient(120deg, #0c3149, #136047);
+  color: #fff;
+}
+
+.photo-story__image {
+  position: absolute;
+  z-index: -2;
+  left: 0;
+  top: -12%;
+  width: 100%;
+  height: 124%;
+  object-fit: cover;
+  object-position: center 45%;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+
+.photo-story::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    90deg,
+    rgba(5, 24, 36, .83) 0%,
+    rgba(5, 24, 36, .55) 51%,
+    rgba(5, 24, 36, .13) 100%
+  );
+}
+
+.photo-story__content { max-width: 770px; }
+
+.photo-story__eyebrow {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: #ffcb74;
+  font-size: 13px;
+  letter-spacing: .2em;
+  font-weight: 800;
+}
+
+.photo-story__content h2 {
+  margin: 0 0 22px;
+  font-size: clamp(36px, 6vw, 78px);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -.04em;
+  text-wrap: balance;
+}
+
+.photo-story__content p {
+  max-width: 590px;
+  margin: 0 0 30px;
+  color: #f0f5f6;
+  font-size: clamp(16px, 1.9vw, 20px);
+  line-height: 1.75;
+}
+
+.photo-story__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+  padding: 13px 23px;
+  border-radius: 9px;
+  background: #f5a92b;
+  color: #172c3d;
+  font-weight: 800;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, .17);
+  transition: background .25s, transform .25s;
+}
+
+.photo-story__button:hover {
+  background: #ffcc77;
+  transform: translateY(-3px);
+}
+
+.photo-story__credit {
+  position: absolute;
+  right: 5%;
+  bottom: 13px;
+  z-index: 1;
+  margin: 0;
+  color: #f3f6f7;
+  font-size: 11px;
+  text-align: right;
+  text-shadow: 0 1px 4px #17232e;
+}
+
+.photo-story__credit a { text-decoration: underline; }
+
+/* Only hide elements when JavaScript can reveal them. */
+html.has-scroll-motion .photo-story__reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity .85s ease, transform .85s cubic-bezier(.2,.7,.2,1);
+}
+
+html.has-scroll-motion .photo-story.is-visible .photo-story__reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+html.has-scroll-motion .photo-story__reveal:nth-child(2) { transition-delay: .12s; }
+html.has-scroll-motion .photo-story__reveal:nth-child(3) { transition-delay: .24s; }
+html.has-scroll-motion .photo-story__reveal:nth-child(4) { transition-delay: .36s; }
+
+/* Reveal existing dashboard cards as they enter the viewport. */
+html.has-scroll-motion .scroll-reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity .65s ease, transform .65s ease;
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+html.has-scroll-motion .scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 650px) {
+  main > .photo-story {
+    min-height: 590px;
+    height: 80svh;
+    max-height: 760px;
+    padding: 65px 6% 75px;
+  }
+  .photo-story__image { object-position: 58% center; }
+  .photo-story::after {
+    background: linear-gradient(90deg, rgba(5,24,36,.83), rgba(5,24,36,.36));
+  }
+  .photo-story__content h2 { font-size: clamp(36px, 9vw, 51px); }
+  .photo-story__credit { right: 6%; left: 6%; font-size: 10px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photo-story__image { will-change: auto; transform: none !important; }
+  html.has-scroll-motion .photo-story__reveal,
+  html.has-scroll-motion .scroll-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

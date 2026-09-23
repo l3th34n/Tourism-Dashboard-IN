@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="India Tourism Dashboard - Explore tourism statistics, destinations and insights across India.">
+
+    <title>India Tourism Dashboard</title>
+
+    <!-- CSS can be added later -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <!-- =========================
+         GOVERNMENT TOP BAR
+    ========================== -->
+
+    <div class="gov-bar">
+
+        <div>
+            Tourism data source: Ministry of Tourism, Government of India
+        </div>
+
+        <div>
+            <a href="#main-content">Skip to Main Content</a>
+            |
+            <a href="#">A-</a>
+            <a href="#">A</a>
+            <a href="#">A+</a>
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header>
+
+        <div class="logo-section">
+
+            <div class="logo">
+                🇮🇳
+            </div>
+
+            <div>
+                <h1>India Tourism Dashboard</h1>
+                <p>Independent hackathon project · Official tourism data sources</p>
+            </div>
+
+        </div>
+
+
+        <!-- Navigation -->
+
+        <nav>
+
+            <a href="#home">Home</a>
+
+            <a href="#dashboard">Dashboard</a>
+
+            <a href="#statistics">Statistics</a>
+
+            <a href="#destinations">Destinations</a>
+
+            <a href="#about">About</a>
+
+            <a href="#contact">Contact</a>
+
+            <a href="login.html">Log In</a>
+
+            <a href="signup.html">Sign Up</a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main id="main-content">
+
+
+        <!-- HERO SECTION -->
+
+        <section id="home" class="hero">
+
+            <h2>Explore Tourism Across Incredible India</h2>
+
+            <p>
+                Discover tourism statistics, visitor trends, destinations
+                and insights from across India.
+            </p>
+
+            <a href="#dashboard">
+                Explore Dashboard
+            </a>
+
+            <a href="https://www.incredibleindia.gov.in/"
+               target="_blank" rel="noopener noreferrer">
+                Explore India
+            </a>
+
+        </section>
+
+
+
+        <!-- CINEMATIC TAJ MAHAL SCROLL SECTION -->
+        <section class="photo-story" aria-label="Discover India's heritage">
+            <img
+                class="photo-story__image"
+                src="images/taj-mahal.jpg"
+                alt="The Taj Mahal in Agra"
+                loading="lazy"
+                decoding="async"
+            >
+            <div class="photo-story__content">
+                <span class="photo-story__eyebrow photo-story__reveal">
+                    DISCOVER INCREDIBLE INDIA
+                </span>
+                <h2 class="photo-story__reveal">
+                    A journey through timeless beauty.
+                </h2>
+                <p class="photo-story__reveal">
+                    Discover the places, stories and heritage behind India's tourism.
+                </p>
+                <a class="photo-story__button photo-story__reveal"
+                   href="#destinations">
+                    Explore destinations &rarr;
+                </a>
+            </div>
+        </section>
+
+
+
+        <!-- =========================
+             QUICK STATISTICS
+        ========================== -->
+
+        <section id="dashboard">
+
+            <h2>Tourism at a Glance</h2>
+
+            <p>
+                Key indicators from India's tourism sector.
+            </p>
+
+
+            <div class="stats-container">
+
+
+                <article class="stat-card">
+
+                    <h3>Foreign Tourist Arrivals</h3>
+
+                    <!-- Replace using API later -->
+                    <p id="foreign-tourists">
+                        Loading data...
+                    </p>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <h3>Domestic Tourist Visits</h3>
+
+                    <p id="domestic-tourists">
+                        Loading data...
+                    </p>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <h3>Foreign Exchange Earnings</h3>
+
+                    <p id="tourism-revenue">
+                        Loading data...
+                    </p>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <h3>Top Tourist Destination</h3>
+
+                    <p id="top-destination">
+                        Loading data...
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             DATA VISUALISATION
+        ========================== -->
+
+        <section id="statistics">
+
+            <h2>Tourism Data & Statistics</h2>
+
+            <p>
+                Explore graphical insights into tourism trends across India.
+            </p>
+
+
+            <div class="chart-container">
+
+
+                <article>
+
+                    <h3>Tourist Arrivals Over Time</h3>
+
+                    <!-- JavaScript chart will appear here -->
+
+                    <div id="tourist-arrival-chart">
+
+                        <p>
+                            Tourist arrival graph will appear here.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+
+                <article>
+
+                    <h3>Domestic vs Foreign Tourism</h3>
+
+                    <div id="domestic-foreign-chart">
+
+                        <p>
+                            Comparison chart will appear here.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+
+                <article>
+
+                    <h3>Tourism by State</h3>
+
+                    <div id="state-tourism-chart">
+
+                        <p>
+                            State-wise tourism graph will appear here.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+
+            <p>
+
+                Official tourism statistics:
+
+                <a
+                    href="https://data.tourism.gov.in/dashboard"
+                    target="_blank" rel="noopener noreferrer">
+
+                    View Ministry of Tourism Data Dashboard
+
+                </a>
+
+            </p>
+
+
+        </section>
+
+
+
+        <!-- =========================
+             DATA EXPLORER
+        ========================== -->
+
+        <section id="data-explorer">
+
+            <h2>Explore Tourism Data</h2>
+
+            <p>
+                Select different categories to explore tourism information.
+            </p>
+
+
+            <div>
+
+                <button>
+                    Foreign Tourist Arrivals
+                </button>
+
+                <button>
+                    Domestic Tourism
+                </button>
+
+                <button>
+                    State-wise Tourism
+                </button>
+
+                <button>
+                    Tourism Revenue
+                </button>
+
+                <button>
+                    Monthly Trends
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             DESTINATIONS
+        ========================== -->
+
+        <section id="destinations">
+
+            <h2>Explore India</h2>
+
+            <p>
+                Discover some of India's most popular tourism experiences.
+            </p>
+
+
+            <div class="destination-container">
+
+
+                <article>
+
+                    <h3>Heritage Tourism</h3>
+
+                    <p>
+                        Explore India's monuments, forts, palaces and
+                        UNESCO World Heritage Sites.
+                    </p>
+
+                    <a href="#">
+                        Explore Heritage
+                    </a>
+
+                </article>
+
+
+
+                <article>
+
+                    <h3>Nature & Wildlife</h3>
+
+                    <p>
+                        Discover national parks, wildlife sanctuaries,
+                        mountains and natural landscapes.
+                    </p>
+
+                    <a href="#">
+                        Explore Nature
+                    </a>
+
+                </article>
+
+
+
+                <article>
+
+                    <h3>Spiritual Tourism</h3>
+
+                    <p>
+                        Experience India's temples, pilgrimage centres
+                        and spiritual destinations.
+                    </p>
+
+                    <a href="#">
+                        Explore Spiritual India
+                    </a>
+
+                </article>
+
+
+
+                <article>
+
+                    <h3>Adventure Tourism</h3>
+
+                    <p>
+                        Discover trekking, rafting, mountaineering
+                        and adventure destinations.
+                    </p>
+
+                    <a href="#">
+                        Explore Adventure
+                    </a>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             ABOUT
+        ========================== -->
+
+        <section id="about">
+
+            <h2>About the Dashboard</h2>
+
+            <p>
+                The India Tourism Dashboard provides an interactive
+                platform for exploring tourism statistics and trends
+                across the country.
+            </p>
+
+            <p>
+                The platform aims to make tourism information easier
+                to understand through statistics, charts and visual
+                representations of official tourism data.
+            </p>
+
+            <p>
+                Data can be integrated from official sources including
+                the Ministry of Tourism's tourism data portal.
+            </p>
+
+        </section>
+
+
+
+        <!-- =========================
+             USEFUL LINKS
+        ========================== -->
+
+        <section>
+
+            <h2>Useful Links</h2>
+
+            <ul>
+
+                <li>
+                    <a
+                        href="https://tourism.gov.in/"
+                        target="_blank" rel="noopener noreferrer">
+                        Ministry of Tourism
+                    </a>
+                </li>
+
+
+                <li>
+                    <a
+                        href="https://data.tourism.gov.in/dashboard"
+                        target="_blank" rel="noopener noreferrer">
+                        Tourism Data Dashboard
+                    </a>
+                </li>
+
+
+                <li>
+                    <a
+                        href="https://www.incredibleindia.gov.in/"
+                        target="_blank" rel="noopener noreferrer">
+                        Incredible India
+                    </a>
+                </li>
+
+
+                <li>
+                    <a
+                        href="https://www.india.gov.in/"
+                        target="_blank" rel="noopener noreferrer">
+                        National Portal of India
+                    </a>
+                </li>
+
+            </ul>
+
+        </section>
+
+
+
+        <!-- =========================
+             CONTACT
+        ========================== -->
+
+        <section id="contact">
+
+            <h2>Contact Us</h2>
+
+            <p>
+                Have questions or suggestions about the dashboard?
+            </p>
+
+
+            <form>
+
+                <label for="name">
+                    Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your name"
+                    required>
+
+
+                <label for="email">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required>
+
+
+                <label for="message">
+                    Message
+                </label>
+
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    placeholder="Enter your message"
+                    required>
+                </textarea>
+
+
+                <button type="submit">
+                    Send Message
+                </button>
+
+            </form>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+
+        <div>
+
+            <h3>India Tourism Dashboard</h3>
+
+            <p>
+                Independent hackathon project using public tourism data.
+            </p>
+
+            <p>
+                Not an official Government of India website.
+            </p>
+
+        </div>
+
+
+
+        <div>
+
+            <h3>Quick Links</h3>
+
+            <ul>
+
+                <li>
+                    <a href="#home">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#dashboard">
+                        Dashboard
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#statistics">
+                        Statistics
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#about">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#contact">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+        <div>
+
+            <h3>Policies</h3>
+
+            <ul>
+
+                <li>
+                    <a href="#">
+                        Privacy Policy
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        Terms & Conditions
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        Copyright Policy
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        Accessibility Statement
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        Sitemap
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+        <hr>
+
+
+        <p>
+            © 2026 India Tourism Dashboard. All Rights Reserved.
+        </p>
+
+        <p>
+            Designed for Hackathon Project.
+        </p>
+
+
+    </footer>
+
+
+
+    <!-- JavaScript can be connected later -->
+    <script src="script.js"></script>
+    <script src="scroll-effects.js"></script>
+
+</body>
+
+</html>
