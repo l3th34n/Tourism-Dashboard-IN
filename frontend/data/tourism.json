@@ -1,0 +1,612 @@
+{
+  "schemaVersion": 1,
+  "publication": "India Tourism Data Compendium 2025",
+  "publisher": "Ministry of Tourism, Government of India",
+  "verifiedOn": "2026-09-23",
+  "sourceUrl": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/sep/doc2025927648801.pdf",
+  "availableYears": [
+    2023,
+    2024
+  ],
+  "tables": {
+    "arrivals": "2.1.1, printed pp. 17–18 (PDF pp. 33–34)",
+    "earnings": "2.9.1, printed pp. 108–109 (PDF pp. 124–125)",
+    "visits": "4.1.1, printed p. 195 (PDF p. 211)",
+    "states": "4.1.2, printed pp. 197–198 (PDF pp. 213–214)"
+  },
+  "notes": [
+    "Published snapshot, not a live feed; no automatic updates.",
+    "Foreign tourist arrivals (FTAs) exclude non-resident Indian arrivals; do not confuse FTAs with international tourist arrivals (ITAs).",
+    "State tourist visits count visits, not unique people; one person can visit multiple states.",
+    "State values are published in rounded millions. National totals use the separate exact-count table, so rounded state values may not sum exactly.",
+    "2024 foreign exchange earnings are revised estimates; 2023 domestic visits are revised.",
+    "Delhi and Maharashtra 2024 state figures are estimates in the source. Certain 2023 state figures are revised, as marked.",
+    "The source table prints Jammu & Pradesh; the state/UT label is normalized here to Jammu & Kashmir."
+  ],
+  "annual": [
+    {
+      "year": 2019,
+      "arrivalsMillion": 10.93,
+      "domesticVisits": 2321982663,
+      "foreignVisits": 31408666,
+      "earningsCrore": 216467
+    },
+    {
+      "year": 2020,
+      "arrivalsMillion": 2.74,
+      "domesticVisits": 610216157,
+      "foreignVisits": 7171769,
+      "earningsCrore": 95738
+    },
+    {
+      "year": 2021,
+      "arrivalsMillion": 1.52,
+      "domesticVisits": 677632981,
+      "foreignVisits": 1054642,
+      "earningsCrore": 63978
+    },
+    {
+      "year": 2022,
+      "arrivalsMillion": 6.44,
+      "domesticVisits": 1731013539,
+      "foreignVisits": 8587562,
+      "earningsCrore": 169917
+    },
+    {
+      "year": 2023,
+      "arrivalsMillion": 9.51,
+      "domesticVisits": 2508817710,
+      "foreignVisits": 19241212,
+      "earningsCrore": 266045
+    },
+    {
+      "year": 2024,
+      "arrivalsMillion": 9.95,
+      "domesticVisits": 2948190825,
+      "foreignVisits": 20942074,
+      "earningsCrore": 293033
+    }
+  ],
+  "states": [
+    {
+      "name": "Chandigarh",
+      "estimated2024": false,
+      "revised2023": false,
+      "years": {
+        "2023": {
+          "domesticMillion": 0.366,
+          "foreignMillion": 0.031
+        },
+        "2024": {
+          "domesticMillion": 0.999,
+          "foreignMillion": 0.039
+        }
+      }
+    },
+    {
+      "name": "Delhi",
+      "estimated2024": true,
+      "revised2023": false,
+      "years": {
+        "2023": {
+          "domesticMillion": 39.415,
+          "foreignMillion": 1.828
+        },
+        "2024": {
+          "domesticMillion": 46.257,
+          "foreignMillion": 1.999
+        }
+      }
+    },
+    {
+      "name": "Haryana",
+      "estimated2024": false,
+      "revised2023": false,
+      "years": {
+        "2023": {
+          "domesticMillion": 2.012,
+          "foreignMillion": 0.001
+        },
+        "2024": {
+          "domesticMillion": 1.892,
+          "foreignMillion": 0.001
+        }
+      }
+    },
+    {
+      "name": "Himachal Pradesh",
+      "estimated2024": false,
+      "revised2023": false,
+      "years": {
+        "2023": {
+          "domesticMillion": 15.942,
+          "foreignMillion": 0.063
+        },
+        "2024": {
+          "domesticMillion": 18.042,
+          "foreignMillion": 0.083
+        }
+      }
+    },
+    {
+      "name": "Jammu & Kashmir",
+      "estimated2024": false,
+      "revised2023": false,
+      "years": {
+        "2023": {
+          "domesticMillion": 20.679,
+          "foreignMillion": 0.055
+        },
+        "2024": {
+          "domesticMillion": 23.013,
+          "foreignMillion": 0.065
+        }
+      }
+    },
+    {
+      "name": "Ladakh",
+      "estimated2024": false,
+      "revised2023": true,
+      "years": {
+        "2023": {
+          "domesticMillion": 0.4891,
+          "foreignMillion": 0.0363
+        },
+        "2024": {
+          "domesticMillion": 0.3367,
+          "foreignMillion": 0.0397
+        }
+      }
+    },
+    {
+      "name": "Punjab",
+      "estimated2024": false,
+      "revised2023": false,
+      "years": {
+        "2023": {
+          "domesticMillion": 35.708,
+          "foreignMillion": 0.742
+        },
+        "2024": {
+          "domesticMillion": 27.745,
+          "foreignMillion": 0.542
+        }
+      }
+    },
+    {
+      "name": "Rajasthan",
+      "estimated2024": false,
+      "revised2023": false,
+      "years": {
+        "2023": {
+          "domesticMillion": 179.052,
+          "foreignMillion": 1.7
+        },
+        "2024": {
+          "domesticMillion": 230.084,
+          "foreignMillion": 2.072
+        }
+      }
+    },
+    {
+      "name": "Uttar Pradesh",
+      "estimated2024": false,
+      "revised2023": false,
+      "years": {
+        "2023": {
+          "domesticMillion": 478.526,
+          "foreignMillion": 1.602
+        },
+        "2024": {
+          "domesticMillion": 646.807,
+          "foreignMillion": 2.269
+        }
+      }
+    },
+    {
+      "name": "Uttarakhand",
+      "estimated2024": false,
+      "revised2023": true,
+      "years": {
+        "2023": {
+          "domesticMillion": 57.571,
+          "foreignMillion": 0.143
+        },
+        "2024": {
+          "domesticMillion": 60.849,
+          "foreignMillion": 0.139
+        }
+      }
+    },
+    {
+      "name": "Andaman & Nicobar Islands",
+      "estimated2024": false,
+      "revised2023": false,
+      "years": {
+        "2023": {
+          "domesticMillion": 0.323,
+          "foreignMillion": 0.009
+        },
+        "2024": {
+          "domesticMillion": 0.71,
+          "foreignMillion": 0.011
+        }
+      }
+    },
+    {
+      "name": "Bihar",
+      "estimated2024": false,
+      "revised2023": false,
+      "years": {
+        "2023": {
+          "domesticMillion": 81.586,
+          "foreignMillion": 0.547
+        },
+        "2024": {
+          "domesticMillion": 65.463,
+          "foreignMillion": 0.737
+        }
+      }
+    },
+    {
+      "name": "Jharkhand",
+      "estimated2024": false,
+      "revised2023": false,
+      "years": {
+        "2023": {
+          "domesticMillion": 35.776,
+          "foreignMillion": 0.189
+        },
+        "2024": {
+          "domesticMillion": 54.041,
+          "foreignMillion": 0.045
+        }
+      }
+    },
+    {
+      "name": "Odisha",
+      "estimated2024": false,
+      "revised2023": false,
+      "years": {
+        "2023": {
+          "domesticMillion": 9.7252,
+          "foreignMillion": 0.0452
+        },
+        "2024": {
+          "domesticMillion": 10.9988,
+          "foreignMillion": 0.0879
+        }
+      }
+    },
+    {
+      "name": "West Bengal",
+      "estimated2024": false,
+      "revised2023": false,
+      "years": {
+        "2023": {
+          "domesticMillion": 145.669,
+          "foreignMillion": 2.707
+        },
+        "2024": {
+          "domesticMillion": 184.476,
+          "foreignMillion": 3.124
+        }
+      }
+    },
+    {
+      "name": "Arunachal Pradesh",
+      "estimated2024": false,
+      "revised2023": true,
+      "years": {
+        "2023": {
+          "domesticMillion": 1.041,
+          "foreignMillion": 0.004
+        },
+        "2024": {
+          "domesticMillion": 0.87,
+          "foreignMillion": 0.005
+        }
+      }
+    },
+    {
+      "name": "Assam",
+      "estimated2024": false,
+      "revised2023": false,
+      "years": {
+        "2023": {
+          "domesticMillion": 7.613,
+          "foreignMillion": 0.024
+        },
+        "2024": {
+          "domesticMillion": 7.608,
+          "foreignMillion": 0.027
+        }
+      }
+    },
+    {
+      "name": "Manipur",
+      "estimated2024": false,
+      "revised2023": false,
+      "years": {
+        "2023": {
+          "domesticMillion": 0.058,
+          "foreignMillion": 0.004
+        },
+        "2024": {
+          "domesticMillion": 0.029,
+          "foreignMillion": 0.003
+        }
+      }
+    },
+    {
+      "name": "Meghalaya",
+      "estimated2024": false,
+      "revised2023": false,
+      "years": {
+        "2023": {
+          "domesticMillion": 1.403,
+          "foreignMillion": 0.02
+        },
+        "2024": {
+          "domesticMillion": 1.586,
+          "foreignMillion": 0.023
+        }
+      }
+    },
+    {
+      "name": "Mizoram",
+      "estimated2024": false,
+      "revised2023": true,
+      "years": {
+        "2023": {
+          "domesticMillion": 0.209,
+          "foreignMillion": 0.004
+        },
+        "2024": {
+          "domesticMillion": 0.422,
+          "foreignMillion": 0.005
+        }
+      }
+    },
+    {
+      "name": "Nagaland",
+      "estimated2024": false,
+      "revised2023": false,
+      "years": {
+        "2023": {
+          "domesticMillion": 0.1,
+          "foreignMillion": 0.005
+        },
+        "2024": {
+          "domesticMillion": 0.126,
+          "foreignMillion": 0.006
+        }
+      }
+    },
+    {
+      "name": "Sikkim",
+      "estimated2024": false,
+      "revised2023": false,
+      "years": {
+        "2023": {
+          "domesticMillion": 1.321,
+          "foreignMillion": 0.094
+        },
+        "2024": {
+          "domesticMillion": 1.54,
+          "foreignMillion": 0.085
+        }
+      }
+    },
+    {
+      "name": "Tripura",
+      "estimated2024": false,
+      "revised2023": false,
+      "years": {
+        "2023": {
+          "domesticMillion": 0.366,
+          "foreignMillion": 0.067
+        },
+        "2024": {
+          "domesticMillion": 0.601,
+          "foreignMillion": 0.091
+        }
+      }
+    },
+    {
+      "name": "Chhattisgarh",
+      "estimated2024": false,
+      "revised2023": false,
+      "years": {
+        "2023": {
+          "domesticMillion": 26.022,
+          "foreignMillion": 0.001
+        },
+        "2024": {
+          "domesticMillion": 31.488,
+          "foreignMillion": 0.003
+        }
+      }
+    },
+    {
+      "name": "Goa",
+      "estimated2024": false,
+      "revised2023": false,
+      "years": {
+        "2023": {
+          "domesticMillion": 8.175,
+          "foreignMillion": 0.453
+        },
+        "2024": {
+          "domesticMillion": 9.941,
+          "foreignMillion": 0.468
+        }
+      }
+    },
+    {
+      "name": "Gujarat",
+      "estimated2024": false,
+      "revised2023": false,
+      "years": {
+        "2023": {
+          "domesticMillion": 178.067,
+          "foreignMillion": 2.807
+        },
+        "2024": {
+          "domesticMillion": 184.014,
+          "foreignMillion": 2.274
+        }
+      }
+    },
+    {
+      "name": "Madhya Pradesh",
+      "estimated2024": false,
+      "revised2023": false,
+      "years": {
+        "2023": {
+          "domesticMillion": 111.946,
+          "foreignMillion": 0.183
+        },
+        "2024": {
+          "domesticMillion": 133.176,
+          "foreignMillion": 0.168
+        }
+      }
+    },
+    {
+      "name": "Maharashtra",
+      "estimated2024": true,
+      "revised2023": false,
+      "years": {
+        "2023": {
+          "domesticMillion": 161.36,
+          "foreignMillion": 3.388
+        },
+        "2024": {
+          "domesticMillion": 189.372,
+          "foreignMillion": 3.705
+        }
+      }
+    },
+    {
+      "name": "Dadra & Nagar Haveli and Daman & Diu",
+      "estimated2024": false,
+      "revised2023": true,
+      "years": {
+        "2023": {
+          "domesticMillion": 1.004,
+          "foreignMillion": 0.004
+        },
+        "2024": {
+          "domesticMillion": 1.359,
+          "foreignMillion": 0.003
+        }
+      }
+    },
+    {
+      "name": "Andhra Pradesh",
+      "estimated2024": false,
+      "revised2023": false,
+      "years": {
+        "2023": {
+          "domesticMillion": 254.706,
+          "foreignMillion": 0.06
+        },
+        "2024": {
+          "domesticMillion": 290.266,
+          "foreignMillion": 0.262
+        }
+      }
+    },
+    {
+      "name": "Karnataka",
+      "estimated2024": false,
+      "revised2023": false,
+      "years": {
+        "2023": {
+          "domesticMillion": 284.121,
+          "foreignMillion": 0.409
+        },
+        "2024": {
+          "domesticMillion": 304.564,
+          "foreignMillion": 0.485
+        }
+      }
+    },
+    {
+      "name": "Kerala",
+      "estimated2024": false,
+      "revised2023": false,
+      "years": {
+        "2023": {
+          "domesticMillion": 21.872,
+          "foreignMillion": 0.649
+        },
+        "2024": {
+          "domesticMillion": 22.247,
+          "foreignMillion": 0.738
+        }
+      }
+    },
+    {
+      "name": "Lakshadweep",
+      "estimated2024": false,
+      "revised2023": false,
+      "years": {
+        "2023": {
+          "domesticMillion": 0.046,
+          "foreignMillion": 0.001
+        },
+        "2024": {
+          "domesticMillion": 0.067,
+          "foreignMillion": 0.001
+        }
+      }
+    },
+    {
+      "name": "Puducherry",
+      "estimated2024": false,
+      "revised2023": false,
+      "years": {
+        "2023": {
+          "domesticMillion": 2.092,
+          "foreignMillion": 0.031
+        },
+        "2024": {
+          "domesticMillion": 2.12,
+          "foreignMillion": 0.018
+        }
+      }
+    },
+    {
+      "name": "Tamil Nadu",
+      "estimated2024": false,
+      "revised2023": false,
+      "years": {
+        "2023": {
+          "domesticMillion": 286.012,
+          "foreignMillion": 1.175
+        },
+        "2024": {
+          "domesticMillion": 306.842,
+          "foreignMillion": 1.161
+        }
+      }
+    },
+    {
+      "name": "Telangana",
+      "estimated2024": false,
+      "revised2023": false,
+      "years": {
+        "2023": {
+          "domesticMillion": 58.448,
+          "foreignMillion": 0.161
+        },
+        "2024": {
+          "domesticMillion": 88.24,
+          "foreignMillion": 0.155
+        }
+      }
+    }
+  ]
+}

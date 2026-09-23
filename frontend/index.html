@@ -10,6 +10,8 @@
     <meta name="theme-color" content="#173f35" />
     <title>India, explored — Tourism Dashboard</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="tourism-data.js" defer></script>
+    <script src="tourism-charts.js" defer></script>
     <script src="script.js" defer></script>
     <script src="scroll-effects.js" defer></script>
   </head>
@@ -115,7 +117,8 @@
         </div>
         <div class="data-status" id="data-status" role="status">
           <span class="status-dot" aria-hidden="true"></span
-          ><span id="data-status-text">Awaiting tourism data connection</span
+          ><span id="data-status-text"
+            >Loading published tourism statistics…</span
           ><a
             href="https://data.tourism.gov.in/dashboard"
             target="_blank"
@@ -123,6 +126,29 @@
             >Visit official source ↗</a
           >
         </div>
+        <div class="dashboard-controls">
+          <div>
+            <label for="report-year">Reporting year</label
+            ><select id="report-year" disabled>
+              <option>Loading…</option>
+            </select>
+          </div>
+          <p>Annual published figures · 2025 compendium</p>
+          <button
+            id="download-data"
+            class="button button-green"
+            type="button"
+            disabled
+          >
+            Download state data ↓
+          </button>
+        </div>
+        <noscript
+          ><p>
+            Enable JavaScript to explore charts, or
+            <a href="data/tourism.json">read the sourced dataset</a>.
+          </p></noscript
+        >
         <div class="stats-container">
           <article class="stat-card">
             <div class="stat-top">
@@ -152,9 +178,11 @@
             <div class="stat-top">
               <span>04 / DESTINATION</span><span aria-hidden="true">◎</span>
             </div>
-            <h3>Top tourist destination</h3>
+            <h3>Leading domestic state</h3>
             <p class="stat-value" id="top-destination">—</p>
-            <span class="stat-caption">Where the journeys lead</span>
+            <span class="stat-caption"
+              >Highest domestic visits · selected year</span
+            >
           </article>
         </div>
       </section>
@@ -205,78 +233,109 @@
           <article class="chart-card chart-wide" id="arrivals-panel">
             <div class="chart-heading">
               <div>
-                <p class="eyebrow">VISITOR TRENDS</p>
-                <h3>Tourist arrivals over time</h3>
+                <p class="eyebrow">THE RECOVERY IN PERSPECTIVE</p>
+                <h3 id="trend-title">Foreign tourist arrivals</h3>
               </div>
-              <span class="chart-badge">Annual overview</span>
-            </div>
-            <div
-              id="tourist-arrival-chart"
-              class="chart-content"
-              aria-live="polite"
-            >
-              <div class="empty-state">
-                <span class="empty-symbol" aria-hidden="true">↗</span>
-                <h4>The next perspective starts with data.</h4>
-                <p>
-                  Verified arrival figures will appear here when a data source
-                  is connected.
-                </p>
+              <div>
+                <label for="trend-metric">Trend indicator</label
+                ><select id="trend-metric">
+                  <option value="arrivalsMillion">Foreign arrivals</option>
+                  <option value="domesticVisits">Domestic visits</option>
+                  <option value="earningsCrore">
+                    Foreign exchange earnings
+                  </option>
+                </select>
               </div>
             </div>
+            <p class="chart-description" id="trend-description"></p>
+            <div id="tourist-arrival-chart" class="chart-content">
+              <p>Loading annual series…</p>
+            </div>
+            <p id="trend-readout" class="chart-readout" aria-live="polite"></p>
+            <details class="chart-table">
+              <summary>View annual figures</summary>
+              <div id="trend-table" class="table-scroll"></div>
+            </details>
           </article>
           <article class="chart-card">
             <div class="chart-heading">
               <div>
-                <p class="eyebrow">TRAVEL COMPOSITION</p>
-                <h3>Domestic & foreign tourism</h3>
+                <p class="eyebrow">VISITS TO STATES & UNION TERRITORIES</p>
+                <h3>Domestic & foreign visits</h3>
               </div>
-              <span aria-hidden="true">◎</span>
+              <span class="chart-badge selected-year"></span>
             </div>
-            <div
-              id="domestic-foreign-chart"
-              class="chart-content"
-              aria-live="polite"
-            >
-              <div class="empty-state">
-                <span class="empty-symbol" aria-hidden="true">◒</span>
-                <h4>Two ways to explore one country.</h4>
-                <p>Compare visit totals once tourism data is available.</p>
-              </div>
+            <div id="domestic-foreign-chart" class="chart-content">
+              <p>Loading visit composition…</p>
             </div>
+            <p class="chart-description">
+              Both categories count state/UT visits, not unique travellers.
+              Foreign state visits differ from arrivals at India's border.
+            </p>
           </article>
           <article class="chart-card">
             <div class="chart-heading">
               <div>
                 <p class="eyebrow">REGIONAL PERSPECTIVE</p>
-                <h3>Tourism by state</h3>
+                <h3>Top states & union territories</h3>
               </div>
-              <span aria-hidden="true">↗</span>
+              <span class="chart-badge selected-year"></span>
             </div>
-            <div
-              id="state-tourism-chart"
-              class="chart-content"
-              aria-live="polite"
-            >
-              <div class="empty-state">
-                <span class="empty-symbol" aria-hidden="true">≋</span>
-                <h4>Every state has a story.</h4>
-                <p>
-                  Explore state-wise visitor figures when a data source is
-                  connected.
-                </p>
+            <div class="state-controls">
+              <div>
+                <label for="state-metric">Rank by</label
+                ><select id="state-metric">
+                  <option value="domesticMillion">Domestic visits</option>
+                  <option value="foreignMillion">Foreign visits</option>
+                </select>
+              </div>
+              <div>
+                <label for="state-search">Find a state or UT</label
+                ><input
+                  type="search"
+                  id="state-search"
+                  placeholder="e.g. West Bengal"
+                />
               </div>
             </div>
+            <p id="state-result" class="chart-description" role="status"></p>
+            <div id="state-tourism-chart" class="chart-content">
+              <p>Loading state rankings…</p>
+            </div>
+            <p class="chart-description">
+              Values in millions, rounded as published. * = 2024 estimate. † =
+              revised 2023 figure.
+            </p>
           </article>
         </div>
+        <details class="data-methods">
+          <summary>Sources, definitions & all state figures</summary>
+          <p>
+            Source:
+            <a
+              id="compendium-link"
+              href="https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/sep/doc2025927648801.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              >India Tourism Data Compendium 2025 ↗</a
+            >, Ministry of Tourism. Tables 2.1.1 (arrivals), 2.9.1 (earnings),
+            4.1.1 (national visit totals) and 4.1.2 (state visits).
+          </p>
+          <ul id="data-notes"></ul>
+          <p>
+            All 36 states and union territories for
+            <span class="selected-year"></span>. State values are in millions.
+            This table and the CSV include every state, regardless of the search
+            filter.
+          </p>
+          <div id="all-states-table" class="table-scroll"></div>
+        </details>
         <p class="source-note">
-          An honest view: no sample figures are presented as official
-          statistics.
-          <a
-            href="https://data.tourism.gov.in/dashboard"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Explore Ministry of Tourism data ↗</a
+          <span
+            >Published snapshot · verified 23 September 2026 · does not update
+            automatically</span
+          ><a href="data/tourism.json" download
+            >Download complete dataset (JSON) ↓</a
           >
         </p>
       </section>
@@ -403,8 +462,8 @@
             understand, and a lot more exciting to explore.
           </p>
           <p>
-            This is an independent hackathon project. Tourism figures, when
-            connected, come from attributed sources. We are not affiliated with
+            This is an independent hackathon project. Tourism figures come from
+            the attributed 2025 official compendium. We are not affiliated with
             the Government of India.
           </p>
           <a
